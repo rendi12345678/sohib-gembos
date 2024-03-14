@@ -1,0 +1,417 @@
+/* CSS Reset */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3&display=swap");
+
+/* Root */
+:root {
+  font-size: 62.5%;
+  --h1: clamp(3rem, 3.2vw, 3.2rem);
+  --column-gap: clamp(2rem, 4.2vw, 4.2rem);
+  --size-2: clamp(3rem, 4vw, 4rem);
+  --h2: clamp(2.4rem, 3.2vw, 3rem);
+  --accent-color: #085ee7;
+  --secondary-color: #f5f5f5;
+  --primary-color: #fff;
+  --contrast-color: #000;
+  --contrast-border-color: #fff;
+  --date-picker-color: invert(30%);
+  --button-color: #fff;
+  --headings-color: #333;
+  --body-color: #444;
+  --input-color: #fff;
+  --hover-color: rgba(0, 0, 0, 0.15);
+  --border-color: rgba(0, 0, 0, 0.15);
+  --white-space: clamp(2rem, 4.2vw, 4.2rem);
+  --h3: clamp(2.2rem, 2.4vw, 2.4rem);
+  --h4: clamp(1.6rem, 2vw, 2rem);
+  --h5: clamp(1.4rem, 1.6vw, 1.6rem);
+  --body-text: clamp(1.4rem, 1.6vw, 1.6rem);
+  --max-width: 96rem;
+  --size-1: 12rem;
+  --border-radius: 1.5rem;
+  --size-3: clamp(1.5rem, 2.5vw, 2.5rem);
+  --size-4: clamp(1rem, 1.3vw, 1.3rem);
+  --size-5: clamp(0.2rem, 0.3vw, 0.3rem);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --date-picker-color: invert(70%);
+    --hover-color: rgba(255, 255, 255, 0.15);
+    --border-color: rgba(255, 255, 255, 0.15);
+    --contrast-color: #fff;
+    --headings-color: #f0f0f0;
+    --body-color: #bebebe;
+    --secondary-color: #1d1d1d;
+    --primary-color: #0e0e0e;
+    --input-color: #1d1d1d;
+  }
+}
+
+/* Global */
+body {
+  background: var(--primary-color);
+  overflow-x: hidden;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+p,
+button,
+a,
+label,
+input,
+textarea,
+figcaption,
+table,
+th,
+tr,
+td {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: var(--body-text);
+  line-height: 1.5;
+  color: var(--body-color);
+  font-weight: 400;
+  text-align: left;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+  box-sizing: border-box;
+}
+
+h2,
+h3,
+h4,
+h5 {
+  color: var(--headings-color);
+}
+
+h1 {
+  color: var(--contrast-color);
+  font-size: var(--h1);
+}
+h2 {
+  font-size: var(--h2);
+}
+h3 {
+  font-size: var(--h3);
+}
+h4 {
+  font-size: var(--h4);
+}
+h5 {
+  font-size: var(--h5);
+  line-height: 1.5;
+}
+
+/* Input and Textarea */
+input,
+textarea {
+  padding: 1rem;
+  color: var(--contrast-color);
+  background: var(--input-color);
+  outline: none;
+  border: 0.1rem solid var(--contrast-color);
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 0.5rem;
+  border: 0.1rem solid var(--border-color);
+  background: var(--secondary-color);
+}
+
+input::placeholder,
+textarea::placeholder {
+  padding: 1rem;
+  color: var(--body-color);
+  opacity: 0.4;
+}
+
+/* Links and Buttons */
+a {
+  text-decoration: none;
+  display: block;
+  color: var(--body-color);
+  border-radius: 1.5rem;
+  transition: 500ms;
+}
+
+a:hover {
+  background-color: var(--hover-color);
+}
+
+button {
+  border: 0;
+  font-weight: 600;
+  color: var(--button-color);
+  padding: 0.8rem 1.5rem;
+  border-radius: var(--border-radius);
+  width: fit-content;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+button:hover {
+  filter: brightness(90%);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Miscellaneous */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: var(--date-picker-color);
+}
+
+img {
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+}
+
+label {
+  height: 100%;
+  width: 100%;
+  color: var(--contrast-color);
+  font-weight: bold;
+}
+
+/* Loading Animation */
+.loader {
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  width: 48px;
+  height: 48px;
+  border: 5px solid var(--contrast-color);
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  z-index: 9999;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--size-2);
+  width: 100%;
+  max-width: 60rem;
+  padding: var(--size-2);
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.container header {
+  width: 100%;
+}
+
+.container header .logo {
+  display: block;
+  text-align: left;
+}
+
+.container header .logo span {
+    color: var(--accent-color);
+}
+
+.container main {
+  display: grid;
+  gap: var(--size-2);
+  width: 100%;
+}
+
+.container main .downloader {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  width: 100%;
+  gap: var(--size-3);
+  height: 15rem;
+  box-sizing: border-box;
+  background: var(--secondary-color);
+  padding: var(--size-3);
+  align-items: center;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.container main .downloader figure {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--size-4);
+}
+
+.container main .downloader figure img {
+  width: 10rem;
+}
+
+.container main .downloader div {
+  display: grid;
+  gap: var(--size-4);
+  width: 100%;
+}
+
+.container main .downloader .download-btn {
+  width: max-content;
+  background: var(--accent-color);
+}
+
+.container p {
+  max-width: 65ch;
+}
