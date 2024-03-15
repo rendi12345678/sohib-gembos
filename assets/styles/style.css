@@ -184,12 +184,7 @@ table {
 body {
   background: var(--primary-color);
   overflow-x: hidden;
-  transition: 500ms;
-}
-
-.container {
-  display: grid;
-  grid-template-columns: auto 1fr;
+  transition: 500ms background-color, 500ms box-shadow;
 }
 
 p,
@@ -350,6 +345,7 @@ label {
 .container {
   display: grid;
   grid-template-columns: 1fr;
+  align-content: start;
   gap: var(--size-2);
   width: 100%;
   max-width: 60rem;
@@ -404,6 +400,7 @@ label {
 .container main .downloader figure {
   width: 100%;
   display: grid;
+  background: var(--secondary-color);
   grid-template-columns: auto 1fr;
   gap: var(--size-4);
 }
@@ -413,6 +410,7 @@ label {
 }
 
 .container main .downloader div {
+  background: var(--secondary-color);
   display: grid;
   gap: var(--size-4);
   width: 100%;
@@ -451,4 +449,17 @@ footer {
   font-size: calc(var(--body-text) - .0rem);
   background: var(--secondary-color);
   height: var(--size-2);
+  transition: 500ms background-color, 500ms box-shadow;
+}
+
+.reveal {
+  position: relative;
+  opacity: 0;
+  transform: translateY(4rem);
+  transition: 1.3s transform, 1.3s opacity;
+}
+
+.active {
+  opacity: 1;
+  transform: translateY(0);
 }
