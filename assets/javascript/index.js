@@ -6,20 +6,6 @@ const darkModeThemeButtonText = "Mode Gelap";
 const lightModeThemeButtonText = "Mode Cerah";
 const lightModeThemeKey = "light-mode";
 
-downloadBtn.addEventListener("click", () => {
-  const fileUrl = "../files/kinemaster-terbaru-by-sohib-gembos.zip";
-
-  const a = document.createElement("a");
-  a.href = fileUrl;
-  a.download = "kinemaster-terbaru-by-sohib-gembos.zip";
-
-  document.body.appendChild(a);
-
-  a.click();
-
-  document.body.removeChild(a);
-});
-
 toggleButton.addEventListener("click", function () {
   body.classList.toggle(darkModeThemeKey);
 
@@ -75,6 +61,6 @@ function reveal() {
 
 document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", reveal);
-  reveal()
+  reveal();
   checkUserTheme();
 });
